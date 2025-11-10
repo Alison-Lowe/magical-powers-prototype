@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% from 'back-link/macro.njk' import backLink %}
+{% from 'button/macro.njk' import button %}
+{% from 'radios/macro.njk' import radios %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/magical-power",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post" novalidate>
+
+       {% from 'textarea/macro.njk' import textarea %}
+
+{{ textarea({
+  name: "symptoms",
+  id: "symptoms",
+  label: {
+    text: "Can you provide more details about your magical powers?",
+    classes: "nhsuk-label--l",
+    isPageHeading: "true"
+  },
+  hint: {
+    text: "For example, can you wrangle mythical beasts."
+  }
+}) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
