@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'button/macro.njk' import button %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      },
+      {
+        href: "#",
+        text: "Section"
+      }
+    ],
+    href: "#",
+    text: "Subsection"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ serviceName}}</h1>
+      <p>Use this service to order a test that will confirm you have magical powers.</p>
+      <p>You can use this service if you:</p>
+      <ul>
+        <li>look like Harry Potter</li>
+        <li>can fly on a broom</li>
+        <li>have a pet unicorn</li>
+      </ul>
+
+      <h2>Before you start</h2>
+
+      <p>We'll ask you some questions about your symptoms.</p>
+
+      {{ button({
+        text: "Start now",
+        href: "#"
+      }) }}
+
+      <p>By using this service you are agreeing to our <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</p>
+{% from 'details/macro.njk' import details %}
+
+{% call details({
+  summaryText: "Test your spell powers",
+  classes: "nhsuk-expander"
+}) %}
+  <p>You can test your spells by:</p>
+  <ul>
+    <li>levitating a donkey </li>
+    <li>learning new spells at <a href="/using-the-nhs/nhs-services/gps/gp-online-services/">spell checker</a>) </li>
+  </ul>
+{% endcall %}
+    </div>
+  </div>
+{% endblock %}
