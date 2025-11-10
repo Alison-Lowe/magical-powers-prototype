@@ -37,15 +37,7 @@
 
       <h2>Before you start</h2>
 
-      <p>We'll ask you some questions about your symptoms.</p>
-
-      {{ button({
-        text: "Start now",
-        href: "#"
-      }) }}
-
-      <p>By using this service you are agreeing to our <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</p>
-{% from 'details/macro.njk' import details %}
+      <p>We'll ask you some questions about your spell powers.</p>
 
 {% call details({
   summaryText: "Test your spell powers",
@@ -54,9 +46,17 @@
   <p>You can test your spells by:</p>
   <ul>
     <li>levitating a donkey </li>
-    <li>learning new spells at <a href="/using-the-nhs/nhs-services/gps/gp-online-services/">spell checker</a>) </li>
+    <li>learning new spells at <a href="/using-the-nhs/nhs-services/gps/gp-online-services/">spell checker</a> </li>
   </ul>
 {% endcall %}
+      {{ button({
+        text: "Start now",
+        href: "/magical-power"
+      }) }}
+
+      <p>By using this service you are agreeing to our <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</p>
+{% from 'details/macro.njk' import details %}
+
     </div>
   </div>
 {% endblock %}
