@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% from 'panel/macro.njk' import panel %}
+{% from "summary-list/macro.njk" import summaryList %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ panel({
+        titleText: "Are you sure, you're not sure?
+       
+        "
+      }) }}
+Try a simpler spell.
+      </p>
+    
+
+
+      <p>
+        <a href="#">Tell us about your experience using this service</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

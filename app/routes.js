@@ -15,11 +15,11 @@ router.post("/magical-powers-answer", (req, res) => {
     // Send user to a page where they'll enter their NHS number
     res.redirect("/symptoms");
   } else if (hasSymptoms === "No") {
-    // Send user to a page where they can find their NHS number
+    // Send user to a page ineligible page
     res.redirect("/noteligible");
   } else {
-    // Send user back to the question page
-    res.redirect("/magical-power");
+    // Send user back to the are you sure question
+    res.redirect("/not-sure");
   }
 });
 module.exports = router
