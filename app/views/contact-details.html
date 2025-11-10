@@ -7,7 +7,7 @@
 
 {% block beforeContent %}
   {{ backLink({
-    href: "/magical-power",
+    href: "/start-page",
     text: "Back"
   }) }}
 {% endblock %}
@@ -15,24 +15,26 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/contact-details" method="post" novalidate>
+      <form action="/check" method="post" novalidate>
+{% from 'input/macro.njk' import input %}
 
-       {% from 'textarea/macro.njk' import textarea %}
-
-{{ textarea({
-  name: "symptoms",
-  id: "symptoms",
-  value: data.symptoms,
+{{ input({
   label: {
-    text: "Can you provide more details about your magical powers?",
-    classes: "nhsuk-label--l",
-    isPageHeading: "true"
+    text: "What is your name?"
   },
-  hint: {
-    text: "For example, can you wrangle mythical beasts."
-  }
+  id: "name",
+  name: "name",
+  value: data.name
 }) }}
 
+{{ input({
+  label: {
+    text: "What is your email?"
+  },
+  id: "email",
+  name: "email",
+  value: data.email
+}) }}
         {{ button({
           text: "Continue"
         }) }}

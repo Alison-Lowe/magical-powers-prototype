@@ -7,14 +7,49 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">Check your answers before sending a test request</h1>
+      <h1 class="nhsuk-heading-l">Check your answers before sending this test request</h1>
 
       <h2 class="nhsuk-heading-m">
-        Personal details
+        Your answers
       </h2>
 
       {{ summaryList({
         rows: [
+          {
+            key: {
+              text: "What is your name?"
+            },
+            value: {
+              text: data.name
+            },
+            actions: {
+              items: [
+                {
+                  href: "/contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "magical power"
+                }
+              ]
+            }
+          },
+
+           {
+            key: {
+              text: "What is your email?"
+            },
+            value: {
+              text: data.email
+            },
+            actions: {
+              items: [
+                {
+                  href: "/contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "magical power"
+                }
+              ]
+            }
+          },
           {
             key: {
               text: "Are you magical?"
@@ -54,7 +89,7 @@
 
 
       <h2 class="nhsuk-heading-m">
-        Now send your application
+        Send your application
       </h2>
 
       <p>
