@@ -18,7 +18,8 @@
       <form action="/symptoms" method="post" novalidate>
 
         {{ radios({
-          name: "hassymptoms",
+          name: "hasSymptoms",
+          value: data.hasSymptoms,
           fieldset: {
             legend: {
               text: "Do you have magical powers?",
